@@ -1,4 +1,3 @@
-import { getCaseLawsbyId } from "@/actions/db";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma"
 
@@ -9,7 +8,11 @@ export async function GET(request:NextRequest,props:{params : Promise<{id:string
             return NextResponse.json({error:"Please provide Id"},{status: 400})
         }
 
-        const doc = await getCaseLawsbyId(id)
+        const doc = await prisma.caseLaw.findFirst({
+            where:{
+                id
+            }
+        })
         const faq = await prisma.caseLawFaq.findFirst({
             where:{
                 noteId: id
