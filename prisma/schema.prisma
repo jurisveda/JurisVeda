@@ -1,0 +1,104 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin{
+  id          String @id @default(uuid())
+  name        String
+  phone       String
+  password    String
+}
+
+model CaseLaw{
+  id                  String @id @default(uuid())
+  content             String
+  title               String
+  summary             String
+  thumbnail           String 
+  thumbnailFieldId    String
+  createdBy           String
+  updatedBy           String
+  faqs                CaseLawFaq?
+}
+
+model LawNote{
+  id                  String @id @default(uuid())
+  content             String
+  title               String
+  summary             String
+  thumbnail           String 
+  thumbnailFieldId    String
+  createdBy           String
+  updatedBy           String
+  faqs                LawNoteFaq?
+}
+
+model CurrentAffair{
+  id                  String @id @default(uuid())
+  content             String
+  title               String
+  thumbnail           String
+  summary             String
+  thumbnailFieldId    String 
+  createdBy           String
+  updatedBy           String
+  faqs                CurrentAffairFaq?
+}
+
+model Subscribed{
+  id                  String @id @default(uuid())
+  fullName            String
+  email               String
+  phone               String
+}
+
+model Message{
+  id                  String @id @default(uuid())
+  fullName            String
+  email               String
+  phone               String?
+  message             String
+  createdAt           DateTime @default(now())
+}
+
+model CaseLawFaq{
+  id                  String @id @default(uuid())
+  question            String[]
+  answer              String[]
+  noteId              String @unique
+  note                CaseLaw @relation(fields: [noteId],references: [id])
+
+  @@index([noteId])
+}
+
+model CurrentAffairFaq{
+  id                  String @id @default(uuid())
+  question            String[]
+  answer              String[]
+  noteId              String @unique
+  note                CurrentAffair @relation(fields: [noteId],references: [id])
+
+  @@index([noteId])
+}
+
+model LawNoteFaq{
+  id                  String @id @default(uuid())
+  question            String[]
+  answer              String[]
+  noteId              String @unique
+  note                LawNote @relation(fields: [noteId],references: [id])
+
+  @@index([noteId])
+}
