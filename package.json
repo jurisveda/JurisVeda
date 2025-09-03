@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "db:migrate": "npx prisma migrate dev",
     "db:generate": "npx prisma generate",
-    "build": "db:generate && next build",
+    "build": "npm run db:generate && next build",
     "start": "next start",
     "lint": "next lint"
   },
