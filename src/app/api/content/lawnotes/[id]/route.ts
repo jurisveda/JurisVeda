@@ -13,7 +13,7 @@ export async function GET(request:NextRequest, props : { params: Promise<{ id: s
         const {id} = await props.params
         console.log(id)
         if(id){
-            const res = await prisma.currentAffair.findFirst({
+            const res = await prisma.lawNote.findFirst({
                         where:{
                             id
                         }
