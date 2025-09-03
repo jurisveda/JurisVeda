@@ -1,5 +1,4 @@
 import { create } from 'zustand'
-import { getLawNotebyId } from '../actions/db'
 
 interface StoreType {
     content: string;
