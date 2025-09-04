@@ -102,7 +102,7 @@ export const OwnImageUploadBtn = ({editor}:{editor:Editor|null}) => {
       }
 
       const { signature, expire, token, publicKey } = authParams;
-      console.log(authParams)
+      // console.log(authParams)
       try{
         objectUrl = URL.createObjectURL(file);
         editor?.chain().focus().setImage({ src: objectUrl }).run();

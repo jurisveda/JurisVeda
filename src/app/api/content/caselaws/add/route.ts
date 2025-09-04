@@ -47,7 +47,7 @@ export async function POST(request:NextRequest){
         })
 
         // const imageKitURL = await uploadToImageKit(thumbnail,uniqueFileName)
-        console.log((user as any).id)
+        // console.log((user as any).id)
         await setCaselaws({
             content,
             title,

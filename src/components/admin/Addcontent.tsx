@@ -51,7 +51,7 @@ export default function Addcontent({section}:{section:string}){
             })
             if(!res.ok){
                 setLoading(false)
-                console.log(res)
+                // console.log(res)
                 toast.warning("Uploading failed")
             }else{
                 router.push(`/admin/${section}`)

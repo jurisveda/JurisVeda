@@ -31,7 +31,7 @@ export async function GET() {
         // throw new Error('Token already expired');
         // }
 
-        console.log({ token, expire, signature, publicKey: process.env.IMAGEKIT_PUBLIC_KEY })
+        // console.log({ token, expire, signature, publicKey: process.env.IMAGEKIT_PUBLIC_KEY })
         return NextResponse.json({ token, expire, signature, publicKey: process.env.IMAGEKIT_PUBLIC_KEY })
     } catch (error) {
         console.error('Error generating auth params:', error)

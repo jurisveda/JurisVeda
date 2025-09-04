@@ -33,7 +33,7 @@ export default function Show(){
                     return
                 }
                 setNote(resData.data)
-                console.log(resData.data)
+                // console.log(resData.data)
             } catch (error: any) {
                 toast.error("Some error occurred")
                 router.push("/caselaws")

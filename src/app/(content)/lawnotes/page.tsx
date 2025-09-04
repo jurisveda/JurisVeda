@@ -26,7 +26,7 @@ export default function LawNotes(){
                     return
                 }
                 const data = await res.json()
-                console.log(data.content)
+                // console.log(data.content)
                 setOptions(data.content)
             } catch (error) {
                 toast.error("Some error occurred while fetching notes")

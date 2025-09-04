@@ -82,7 +82,7 @@ export default function AddFAQComponent({
         })
       })
 
-      console.log(res)
+      // console.log(res)
       if(!res.ok){
         throw new Error();
       }

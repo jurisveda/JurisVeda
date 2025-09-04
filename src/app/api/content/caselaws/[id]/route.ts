@@ -11,7 +11,7 @@ export async function GET(request:NextRequest, props : { params: Promise<{ id: s
             return NextResponse.json({error:"Unauthorized"},{status:401})
         }
         const {id} = await props.params
-        console.log(id)
+        // console.log(id)
         if(id){
             const res = await prisma.caseLaw.findFirst({
                 where:{

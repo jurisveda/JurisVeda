@@ -61,7 +61,7 @@ export default function Navbar({trigger}:{trigger:boolean}) {
           "fixed max-w-screen bg-white dark:bg-neutral-700 left-1/2 -translate-x-1/2 z-20 px-4 py-2 lg:px-8 text-black",
           "transition-all duration-400",
           "hidden md:block",
-          scrolled ? "rounded-xl shadow-xl" : "",
+          scrolled && trigger ? "rounded-xl shadow-xl" : "",
         )}
       >
         <div className={cn("max-w-full mx-auto flex items-center justify-between")}>

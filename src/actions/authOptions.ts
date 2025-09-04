@@ -21,6 +21,11 @@ export const authOptions : AuthOptions = {
                 const phone = credentials.phone
                 const password = credentials.password
                 const key = credentials.key
+
+                if(!username || !phone || !password){
+                    return null;
+                }
+
                 const response = await prisma.admin.findFirst({
                     where:{
                         name:username,
@@ -46,8 +51,8 @@ export const authOptions : AuthOptions = {
                 }
                 const validate = await bcrypt.compare(password , response.password)
                 if(validate){
-                    console.log(validate)
-                    console.log(response)
+                    // console.log(validate)
+                    // console.log(response)
                     return {
                         id : response.id,
                         name : username,
