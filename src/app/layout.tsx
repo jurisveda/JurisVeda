@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="overflow-auto no-scrollbar" suppressHydrationWarning>
       <body className={cn(inter.className , "dark:bg-neutral-800 bg-blue-200")}>
-        <ThemeProvider attribute="data-theme" defaultTheme="light">
+        <ThemeProvider attribute="data-theme" defaultTheme="light" disableTransitionOnChange={true}>
           <AuthProvider>
             {children}
             <Toaster />

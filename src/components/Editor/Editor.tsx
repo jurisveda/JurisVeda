@@ -22,18 +22,6 @@ export default function TipTapEditor({content , onContentChange , placeholder}:T
         inclusive: false,
     })
 
-    useEffect(()=>{
-        const theme = localStorage.getItem("theme")
-        console.log(theme)
-        if(theme){
-        if(theme === "light"){
-            document.body.removeAttribute("data-theme")
-        }
-        }
-    },[])
-
-
-
     const editor = useEditor({
         editorProps:{
             attributes:{

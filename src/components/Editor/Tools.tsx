@@ -156,29 +156,6 @@ const UploadTodb = ({editor}:{editor:Editor|null}) => {
 export default function ToolBar() {
   const { editor } = useCurrentEditor()
   const [theme , setTheme] = useState<string|null>(null)
-
-  useEffect(() => {
-    const saved = localStorage.getItem("theme")
-    if (saved === "dark") {
-      setTheme("dark")
-      document.body.setAttribute("data-theme", "dark")
-    } else {
-      setTheme("light")
-      document.body.removeAttribute("data-theme")
-    }
-  }, [])
-
-  const toggleMode = () => {
-    if(theme === "dark"){
-      document.body.removeAttribute("data-theme")
-      setTheme("light")
-      localStorage.setItem('theme' , "light")
-    }else{
-      document.body.setAttribute("data-theme" , "dark")
-      setTheme("dark")
-      localStorage.setItem('theme' , "dark")
-    }
-  }
   
   const toolbarState = useEditorState({
     editor,

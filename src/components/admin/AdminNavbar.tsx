@@ -19,7 +19,6 @@ export default function Navbar({className}:{className?:string}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   // const [scrolled, setScrolled] = useState(false)
   const {theme , setTheme} = useTheme()
-  const pathname = usePathname()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -29,7 +28,25 @@ export default function Navbar({className}:{className?:string}) {
 // this cause delayed rendering of navbar with respect to other divs , doesnt look good , implement own useEffect for theme
 
   if (!mounted) {
-    return null
+    return (
+      <nav className={cn("fixed top-0 w-full bg-white dark:bg-neutral-700 z-20 px-4 py-2 lg:px-8 text-black hidden md:block")}>
+        <div className={cn("max-w-full mx-auto flex items-center justify-between")}>
+          <div className="flex gap-2">
+            <Scale />
+            <span className="sm:text-lg md:text-xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
+              JurisVeda
+            </span>
+          </div>
+          <div className="flex items-center gap-10">
+            {/* Theme toggle skeleton */}
+            <div className="h-7 w-20 rounded-2xl bg-gray-200 animate-pulse"></div>
+            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-2 py-2 rounded-lg transition-colors">
+              Logout
+            </button>
+          </div>
+        </div>
+      </nav>
+    )
   }
 
   const toggleMode = () => {
