@@ -1,5 +1,4 @@
 import Navbar from "@/components/admin/AdminNavbar";
-import Loading from "@/components/LoadingPage";
 import { ReactNode } from "react";
 
 export default function AdminLayout({children}:{children:ReactNode}){
