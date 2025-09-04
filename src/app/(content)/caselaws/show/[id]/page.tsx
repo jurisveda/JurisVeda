@@ -1,5 +1,5 @@
 "use client"
-import FAQSection from "@/components/client/NewFaq"
+import FAQSection from "@/components/client/FaqCard"
 import { useParams } from "next/navigation"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"

@@ -3,7 +3,7 @@
 import { motion } from 'motion/react'
 import { useState, useEffect, useRef } from 'react'
 import { cn } from "@/lib/utils"
-import { Book, Cash, Home, Location, Mail, NewsPaper, Instagram, LinkedIn, X, Youtube, Scale } from '../svgProvider'
+import { Book, Cash, Home, Location, Mail, NewsPaper, Instagram, LinkedIn, X, Youtube, Scale } from '../SvgProvider'
 import { useSubscriptionStore } from '@/lib/store'
 
 export default function Footer() {
@@ -44,7 +44,6 @@ export default function Footer() {
         }}
       >
         <div className={cn("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-4")}>
-          {/* Company Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -62,8 +61,6 @@ export default function Footer() {
             </p>
           </motion.div>
 
-    
-          {/* Quick Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -91,7 +88,6 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* Services */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -112,7 +108,6 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -131,7 +126,6 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        {/* Bottom Bar */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

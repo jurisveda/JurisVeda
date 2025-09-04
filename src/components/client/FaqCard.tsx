@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/accordion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Skeleton } from "@/components/ui/skeleton"
-import { HelpCircle, MessageCircle, Search } from "lucide-react"
+import { HelpCircle } from "lucide-react"
 
 interface FAQItem {
   question: string

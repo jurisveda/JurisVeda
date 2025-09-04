@@ -3,7 +3,7 @@
 import { motion } from 'motion/react'
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
-import { Book, Cash, NewsPaper, Scale } from '@/components/svgProvider'
+import { Book, Cash, NewsPaper, Scale } from '@/components/SvgProvider'
 import { cn } from "@/lib/utils"
 import { DoorOpen, LogOut, LogOutIcon, Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
@@ -26,7 +26,7 @@ export default function Navbar({className}:{className?:string}) {
     setMounted(true)
   }, [])
 
-// this cause late rendering of navbar with respect to other divs , doesnt look good , implement own useEffect for theme
+// this cause delayed rendering of navbar with respect to other divs , doesnt look good , implement own useEffect for theme
 
   if (!mounted) {
     return null

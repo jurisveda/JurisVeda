@@ -6,7 +6,7 @@ import { Plus } from "lucide-react";
 import { useLoadingStore } from "@/lib/store";
 import NoContent from "./NoContent";
 import Notecard from "./Notecard";
-import Loading from "@/components/loadingPage";
+import Loading from "@/components/LoadingPage";
 
 interface noteType {
   id: string;

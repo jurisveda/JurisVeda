@@ -3,7 +3,7 @@
 import { motion } from 'motion/react'
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
-import { Book, Cash, NewsPaper, Scale } from '../svgProvider'
+import { Book, Cash, NewsPaper, Scale } from '../SvgProvider'
 import { cn } from "@/lib/utils"
 import { Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
@@ -133,7 +133,6 @@ export default function Navbar({trigger}:{trigger:boolean}) {
         </div>
       </motion.nav>
 
-      {/* Mobile Navigation */}
       <nav className={cn("fixed bg-neutral-100 dark:bg-neutral-800 top-0 left-0 right-0 z-20 px-6 py-2 lg:px-8 text-black md:hidden")}>
         <div className={cn("max-w-7xl mx-auto flex items-center justify-between")}>
           <a href='/' className={cn("flex items-center cursor-pointer")}>
@@ -162,7 +161,7 @@ export default function Navbar({trigger}:{trigger:boolean}) {
                 )}
               </motion.div>
             </motion.div>
-            {/* Mobile Menu Button */}
+
             <motion.button
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -176,7 +175,7 @@ export default function Navbar({trigger}:{trigger:boolean}) {
             </motion.button>
           </div>
         </div>
-        {/* Mobile Menu */}
+        
         {isMenuOpen && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}

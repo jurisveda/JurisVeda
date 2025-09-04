@@ -4,8 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Contents from "./Content";
 import StatsCard from "./Stats";
 import MessageComp from "./UserMessages";
-export default function MainSection(){
 
+export default function MainSection(){
   return(
     <div className="flex-1 flex flex-col justify-center space-y-6 dark:text-white pt-10">
       <div className="space-y-2">

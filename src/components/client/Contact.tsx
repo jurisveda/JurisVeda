@@ -51,7 +51,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" ref={contactRef} className={cn("py-20 bg-blue-200 dark:bg-[#2a2a2a]")}>
+    <section id="contact" ref={contactRef} className={cn("py-20 bg-blue-200 dark:bg-neutral-800")}>
       <div 
         className={cn("max-w-7xl mx-auto px-6 lg:px-8 flex flex-col justify-center items-center")}
         style={{
@@ -70,8 +70,7 @@ export default function Contact() {
             Get In Touch
           </h2>
           <p className={cn("text-xl text-gray-600 dark:text-white max-w-3xl mx-auto")}>
-            Ready to discuss your legal needs? Contact us today for a confidential consultation 
-            with our expert legal team.
+            Message us about any additional legal resources or topics you'd like us to cover.
           </p>
         </motion.div>
           

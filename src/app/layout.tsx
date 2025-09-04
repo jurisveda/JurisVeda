@@ -10,10 +10,10 @@ import { ThemeProvider } from "next-themes";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "JurisVeda - Expert Legal Solutions",
-  description: "Your trusted partner for comprehensive legal services. We provide expert counsel and representation across all areas of law.",
-  keywords: "legal services, law firm, corporate law, real estate law, employment law, intellectual property, litigation",
-  authors: [{ name: "JurisVeda Legal Services" }],
+  title: "Juris Veda - Essential Legal Companion",
+  description: "Your essential legal companion, simplifying complex topics with expertly curated notes, landmark case laws, and vital current affairs for students and professionals alike.",
+  keywords: "legal companion, law notes, case laws, legal studies, current affairs, legal education, law students, legal professionals, landmark cases, legal resources",
+  authors: [{ name: "Juris Veda" }],
 };
 
 export const viewport = {

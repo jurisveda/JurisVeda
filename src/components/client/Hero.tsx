@@ -22,7 +22,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className={cn("text-4xl md:text-6xl font-extrabold dark:text-white text-black leading-tight")}
+            className={cn("text-4xl md:text-6xl font-extrabold dark:text-white text-black/70 leading-tight")}
           >
             Your <span className={cn('text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400 mx-3')}>One-Stop</span> Legal Resource Hub
           </motion.p>

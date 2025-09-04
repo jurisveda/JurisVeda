@@ -1,7 +1,7 @@
 "use client"
 import AddFAQComponent from "@/components/admin/Addfaqs";
 import EditFAQComponent from "@/components/admin/Editfaqs";
-import Loading from "@/components/loadingPage";
+import Loading from "@/components/LoadingPage";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";

@@ -1,6 +1,6 @@
 import Blur from "@/components/client/Blur";
 import Navbar from "@/components/client/Navbar";
-import SubscriptionModal from "@/components/client/subscriptionModal";
+import SubscriptionModal from "@/components/client/SubscriptionModal";
 import { ReactNode } from "react";
 
 export default function HomeLayout({children}:{children : ReactNode}){

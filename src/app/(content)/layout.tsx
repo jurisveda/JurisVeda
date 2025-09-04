@@ -1,5 +1,5 @@
 import Navbar from "@/components/client/Navbar";
-import SubscriptionModal from "@/components/client/subscriptionModal";
+import SubscriptionModal from "@/components/client/SubscriptionModal";
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 

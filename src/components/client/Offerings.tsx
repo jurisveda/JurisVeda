@@ -1,7 +1,6 @@
 'use client'
 import { ArrowRight } from "lucide-react"
-import { useRef, useState, useEffect } from 'react'
-import { Book, Cash, NewsPaper } from '../svgProvider'
+import { Book, Cash, NewsPaper } from '../SvgProvider'
 import { cn } from "@/lib/utils"
 
 const services = [
@@ -17,7 +16,7 @@ const services = [
     classes: "dark:bg-orange-400/20 dark:hover:bg-orange-400/40 bg-orange-400/60 border border-2 border-orange-400 hover:bg-orange-400/70",
     title: "Case Laws",
     href: "/caselaws",
-    description: "Expert guidance in property transactions, development projects, leasing agreements, and real estate litigation.",
+    description: "Comprehensive guidance in property deals, development projects, leasing agreements, and expert real estate litigation services.",
   },
   {
     icon: <NewsPaper className=""/>,
@@ -45,13 +44,13 @@ export default function Offerings() {
         <div className={cn("grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8")}>
           {services.map((service, index) => (
             <a key={service.title} href={service.href} className={cn('block h-full')}>
-              <div className={cn("rounded-2xl flex flex-col items-center group dark:shadow-none shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border gap-8",service.classes)}>
+              <div className={cn("rounded-2xl flex flex-col justify-around items-center group dark:shadow-none shadow-lg hover:shadow-2xl transition-all duration-300 border px-4 py-2 sm:px-6 min-w-[250px] h-85 sm:h-65 md:h-95 lg:h-85",service.classes)}>
                 <div className={cn("flex flex-col items-center text-center")}>
                   <div className={cn("text-4xl mb-4 bg-white size-15 flex items-center justify-center rounded-full")}>{service.icon}</div>
                   <h3 className={cn("text-2xl font-bold text-white mb-4")}>{service.title}</h3>
                   <p className={cn("text-white  leading-relaxed flex-grow")}>{service.description}</p>
                 </div>
-                <div className={cn("flex text-blue-600/80 dark:text-white lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-700")}>Explore Section<ArrowRight/></div>
+                <div className={cn("flex text-blue-600/80 dark:text-white lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-700")}><span className="hidden sm:block">Explore Section</span><ArrowRight/></div>
               </div>
             </a>
           ))}

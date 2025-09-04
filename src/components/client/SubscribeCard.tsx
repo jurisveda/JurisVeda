@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 export default function Subscribe(){
     const toggle = useSubscriptionStore((s)=>s.toggleModal)
     return(
-        <section className={cn("bg-white dark:bg-[#2a2a2a] py-20")}>
+        <section className={cn("bg-white dark:bg-neutral-800 py-20 shadow-md")}>
             <div className={cn("max-w-7xl mx-auto px-6 lg:px-8 flex flex-col justify-center items-center")}>
                 <div className={cn("w-full bg-gradient-to-r from-blue-600/40 to-cyan-300/60 text-white text-center py-20 px-6 rounded-2xl shadow-xl")}>
                     <h2 className={cn("text-4xl font-bold mb-4")}>Elevate Your Knowledge</h2>

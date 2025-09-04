@@ -1,6 +1,6 @@
 'use client'
 import { ArrowRight, Edit, Eye, Trash2 } from "lucide-react"
-import { Book, Cash, NewsPaper } from '@/components/svgProvider'
+import { Book, Cash, NewsPaper } from '@/components/SvgProvider'
 import { cn } from "@/lib/utils"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
