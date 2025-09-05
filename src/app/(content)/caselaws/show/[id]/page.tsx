@@ -60,15 +60,13 @@ export default function Show(){
             </div>
         )
     }
-
-    const smartCroppedUrl = `${note.thumbnail}?tr=w-800,h-400,fo-face`
     
     return(
         <div className="max-w-5xl w-full bg-white dark:bg-neutral-900 text-black flex flex-col flex-2/12 pt-10 mx-auto">
             <div className="text-center w-full">
-                <div className="relative mb-8">
+                <div className="relative mb-8 ">
                     <Image 
-                        src={smartCroppedUrl} 
+                        src={`${note.thumbnail}?tr=w-800,h-400,fo-face`} 
                         alt="Hero image" 
                         width={400}
                         height={256}

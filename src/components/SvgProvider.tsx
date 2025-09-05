@@ -4,7 +4,7 @@ type prop = {
   className? :string
 }
 
-export function Scale() {
+export function Scale({className}:{className?:string}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +14,7 @@ export function Scale() {
       stroke="currentColor"
       aria-hidden="true"
       data-slot="icon"
-      className={cn("h-7 w-7 text-blue-600")}
+      className={cn("h-7 w-7 text-blue-600",className)}
     >
       <path
         strokeLinecap="round"

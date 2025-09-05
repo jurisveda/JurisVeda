@@ -133,15 +133,15 @@ export default function Navbar({trigger}:{trigger:boolean}) {
         </div>
       </motion.nav>
 
-      <nav className={cn("fixed bg-neutral-100 dark:bg-neutral-800 top-0 left-0 right-0 z-20 px-6 py-2 lg:px-8 text-black md:hidden")}>
+      <nav className={cn("fixed bg-neutral-100 dark:bg-neutral-800 top-0 left-0 right-0 z-20 px-3 sm:px-8 py-2 lg:px-8 text-black md:hidden")}>
         <div className={cn("max-w-7xl mx-auto flex items-center justify-between")}>
-          <a href='/' className={cn("flex items-center cursor-pointer")}>
-            <div className={cn("flex gap-2")}>
-              <Scale />
-              <span className={cn("text-xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500")}>JurisVeda</span>
+          <a href='/' className={cn("flex items-center cursor-pointer min-w-0 flex-shrink")}>
+            <div className={cn("flex items-center min-w-0")}>
+              <Scale className='flex-shrink-0'/>
+              <span className={cn("hidden sm:block md:text-xl sm:text-lg font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500")}>JurisVeda</span>
             </div>
           </a>
-          <div className={cn("flex items-center")}>
+          <div className={cn("flex items-center flex-shrink-0")}>
             <motion.div
               className={cn("h-5 w-10 mx-1 rounded-2xl relative cursor-pointer overflow-hidden flex items-center" , theme === "dark" ? 'bg-neutral-500' : 'bg-amber-200')}
               onClick={toggleMode}
