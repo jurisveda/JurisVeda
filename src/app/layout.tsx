@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="overflow-auto no-scrollbar" suppressHydrationWarning>
-      <body className={cn(inter.className , "dark:bg-neutral-800 bg-blue-200")}>
+      <body className={cn(inter.className, "bg-prime")}>
         <ThemeProvider attribute="data-theme" defaultTheme="light" disableTransitionOnChange={true}>
           <AuthProvider>
             {children}

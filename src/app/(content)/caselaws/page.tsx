@@ -13,16 +13,16 @@ interface optionsType{
 
 export default function CaseLaws(){
     const [options , setOptions] = useState<optionsType[]|null>(null)
-    const [loading , setLoading] = useState(false)
+    const [loading , setLoading] = useState(true)
     const [error , setError] = useState(false)
 
     useEffect(()=>{
         async function getNotes(){
             try {
-                setLoading(true)
                 const res = await fetch("/api/client/caselaws")
                 if(!res.ok){
                     setError(true)
+                    // console.log(res)
                     return
                 }
                 const data = await res.json()

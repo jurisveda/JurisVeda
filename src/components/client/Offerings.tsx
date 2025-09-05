@@ -30,7 +30,7 @@ const services = [
 export default function Offerings() {
   
   return (
-    <section className={cn("py-20 bg-white dark:bg-neutral-800")}>
+    <section className={cn("py-20 bg-universal")}>
       <div className={cn("flex flex-col justify-center items-center max-w-7xl mx-auto px-6 lg:px-8")}>
         <div className={cn("text-center mb-16")}>
           <h2 className={cn("text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6")}>

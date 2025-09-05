@@ -51,7 +51,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" ref={contactRef} className={cn("py-20 bg-blue-200 dark:bg-neutral-800")}>
+    <section id="contact" ref={contactRef} className={cn("py-20")}>
       <div 
         className={cn("max-w-7xl mx-auto px-6 lg:px-8 flex flex-col justify-center items-center")}
         style={{

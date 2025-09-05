@@ -142,6 +142,24 @@
   }
 }
 
+:root[data-theme="light"]{
+  --prime: oklch(88.2% 0.059 254.128);
+  --universal: oklch(98.4% 0.003 247.858);
+  --notes: oklch(97.7% 0.013 236.62);
+}
+
+:root[data-theme="dark"]{
+  --prime: oklch(26.9% 0 0);
+  --universal: oklch(26.9% 0 0);
+  --notes: oklch(26.9% 0 0);
+}
+
+@theme inline{
+  --color-prime: var(--prime);
+  --color-universal: var(--universal);
+  --color-notes: var(--notes);
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);

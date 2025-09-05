@@ -5,10 +5,10 @@ import { ReactNode } from "react";
 
 export default function({children}:{children:ReactNode}){
     return(
-        <div className={cn("min-h-screen max-w-screen dark:bg-black relative bg-blue-100 flex flex-col")}>
+        <div className={cn("min-h-screen max-w-screen relative flex flex-col")}>
             <SubscriptionModal/>
             <Navbar trigger={false}/>
-            <div className="overflow-x-hidden">
+            <div className="flex-1 overflow-x-hidden flex flex-col">
                 {children}
             </div>
         </div>

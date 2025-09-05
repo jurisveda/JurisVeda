@@ -12,7 +12,7 @@ export default function Hero() {
 
 // from-slate-900 via-blue-900 to-slate-900
   return (
-    <section className={cn("min-h-screen relative flex flex-col justify-center items-center overflow-hidden bg-blue-200 dark:bg-neutral-800")}>
+    <section className={cn("min-h-screen relative flex flex-col justify-center items-center overflow-hidden")}>
       {/* <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5"></div>
       </div> */}

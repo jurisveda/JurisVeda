@@ -17,21 +17,17 @@ interface noteType{
 export default function Show(){
     const router = useRouter()
     const {id} = useParams()
-    const [note , setNote] = useState<noteType|null>(null)
+    const [note , setNote] = useState<noteType>({title:"",thumbnail:"",content:""})
     // const [error , setError] = useState<string|null>(null)
-    const [loading , setLoading] = useState<boolean>(false)
+    const [loading , setLoading] = useState(true)
     
     useEffect(()=>{
         async function getNote(){
             try {
-                setLoading(true)
                 const res = await fetch(`/api/client/caselaws/get/${id}`)
                 const resData = await res.json()
                 if(!res.ok){
-                    // setError(resData.error)
-                    toast.error("Can't fetch notes right now !!")
-                    router.push("/caselaws")
-                    return
+                    throw new Error()
                 }
                 setNote(resData.data)
                 // console.log(resData.data)
@@ -47,43 +43,34 @@ export default function Show(){
 
     if(loading){
         return(
-            <div className="min-h-screen max-w-5xl w-full bg-white dark:bg-neutral-900 dark:text-white flex items-center justify-center mx-auto">
+            <div className="min-h-screen max-w-6xl w-full bg-notes dark:text-white flex items-center justify-center mx-auto">
                 Loading Content...
-            </div>
-        )
-    }
-
-    if(!note){
-        return(
-            <div className="max-w-5xl w-full bg-white dark:bg-neutral-900 text-black flex items-center justify-center">
-                Nothing to look here 😾 !! Go back !
             </div>
         )
     }
     
     return(
-        <div className="max-w-5xl w-full bg-white dark:bg-neutral-900 text-black flex flex-col flex-2/12 pt-10 mx-auto">
+        <div className="max-w-6xl w-full bg-notes text-black flex flex-col flex-2/12 pt-10 mx-auto">
             <div className="text-center w-full">
-                <div className="relative mb-8 ">
+                <div className="relative mb-8 aspect-[5/2] overflow-hidden rounded-lg">
                     <Image 
-                        src={`${note.thumbnail}?tr=w-800,h-400,fo-face`} 
+                        src={`${note.thumbnail}?tr=w-1200,h-800,fo-auto`} 
                         alt="Hero image" 
-                        width={400}
-                        height={256}
-                        className="w-full h-75 object-cover object-center rounded-b-lg"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+                        fill
+                        className="object-cover object-center"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                     />
-                    {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black rounded-b-lg"></div> */}
                 </div>
                 
                 <h1 className="text-lg md:text-3xl dark:text-white font-bold mb-6 px-5">
                     {note.title}
                 </h1>
                 
-                {note.content && <p className="flex flex-col text-justify prose max-w-none prose-sm prose-headings:my-1 prose-p:my-1 prose-ul:my-1 prose-ol:my-1 prose-li:my-0 md:px-10 px-5 leading-relaxed" dangerouslySetInnerHTML={{__html: note?.content}}></p>}
+                <p className="flex flex-col text-justify prose prose-sm sm:prose-base md:prose-lg lg:prose-xl xl:prose-2xl max-w-none prose-headings:my-1 prose-p:my-1 prose-ul:my-1 prose-ol:my-1 prose-li:my-0 text-xs sm:text-sm md:text-base lg:text-lg px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 leading-relaxed" 
+                dangerouslySetInnerHTML={{__html: note.content}} 
+                />
             </div>
             {(note.questions && note?.answers) && <FAQSection questions={note.questions} answers={note.answers} length={note.questions.length}/>}
-            {/* <FAQSection/> */}
         </div>
     )
 }
