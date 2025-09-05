@@ -1,5 +1,6 @@
 "use client"
 import FAQSection from "@/components/client/FaqCard"
+import Image from "next/image"
 import { useParams } from "next/navigation"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
@@ -51,26 +52,39 @@ export default function Show(){
             </div>
         )
     }
+
+    if(!note){
+        return(
+            <div className="max-w-5xl w-full bg-white dark:bg-neutral-900 text-black flex items-center justify-center">
+                Nothing to look here 😾 !! Go back !
+            </div>
+        )
+    }
+
+    const smartCroppedUrl = `${note.thumbnail}?tr=w-800,h-400,fo-face`
     
     return(
         <div className="max-w-5xl w-full bg-white dark:bg-neutral-900 text-black flex flex-col flex-2/12 pt-10 mx-auto">
             <div className="text-center w-full">
                 <div className="relative mb-8">
-                    <img 
-                        src={note?.thumbnail} 
+                    <Image 
+                        src={smartCroppedUrl} 
                         alt="Hero image" 
-                        className="w-full h-64 object-cover rounded-b-lg"
+                        width={400}
+                        height={256}
+                        className="w-full h-75 object-cover object-center rounded-b-lg"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black rounded-b-lg"></div>
+                    {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black rounded-b-lg"></div> */}
                 </div>
                 
                 <h1 className="text-lg md:text-3xl dark:text-white font-bold mb-6 px-5">
-                    {note?.title}
+                    {note.title}
                 </h1>
                 
-                {note?.content && <p className="flex flex-col text-justify prose max-w-none prose-sm prose-headings:my-1 prose-p:my-1 prose-ul:my-1 prose-ol:my-1 prose-li:my-0 md:px-10 px-5 leading-relaxed" dangerouslySetInnerHTML={{__html: note?.content}}></p>}
+                {note.content && <p className="flex flex-col text-justify prose max-w-none prose-sm prose-headings:my-1 prose-p:my-1 prose-ul:my-1 prose-ol:my-1 prose-li:my-0 md:px-10 px-5 leading-relaxed" dangerouslySetInnerHTML={{__html: note?.content}}></p>}
             </div>
-            {(note?.questions && note?.answers) && <FAQSection questions={note.questions} answers={note.answers} length={note.questions.length}/>}
+            {(note.questions && note?.answers) && <FAQSection questions={note.questions} answers={note.answers} length={note.questions.length}/>}
             {/* <FAQSection/> */}
         </div>
     )

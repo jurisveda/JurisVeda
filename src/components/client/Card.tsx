@@ -36,7 +36,7 @@ export function Card({ thumbnail, title, summary, alt = "Thumbnail", id, section
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 text-center leading-none"
                 /> */}
                 <Image 
-                    src={thumbnail} 
+                    src={`${thumbnail}?tr=w-800,h-400,fo-face`} 
                     alt={alt}
                     fill
                     placeholder="blur"

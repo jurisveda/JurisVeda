@@ -10,7 +10,12 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   images:{
-    remotePatterns: [new URL('https://ik.imagekit.io/jusrisveda/lawnotes/**')]
+    remotePatterns: [{
+      protocol: 'https',
+      hostname: 'ik.imagekit.io',
+      port: '',
+      pathname: '/jusrisveda/**'
+    }]
   }
 };
 
