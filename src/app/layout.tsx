@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   description: "Your essential legal companion, simplifying complex topics with expertly curated notes, landmark case laws, and vital current affairs for students and professionals alike.",
   keywords: "legal companion, law notes, case laws, legal studies, current affairs, legal education, law students, legal professionals, landmark cases, legal resources",
   authors: [{ name: "Juris Veda" }],
+  other: {
+    'google-adsense-account': "ca-pub-7600277164170449"
+  }
 };
 
 export const viewport = {
@@ -29,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="overflow-auto no-scrollbar" suppressHydrationWarning>
-      <Script id="adsense-script" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7600277164170449" crossOrigin="anonymous"/>
+      {/* <Script id="adsense-script" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7600277164170449" crossOrigin="anonymous"/> */}
       <body className={cn(inter.className, "bg-prime")}>
         <ThemeProvider attribute="data-theme" defaultTheme="light" disableTransitionOnChange={true}>
           <AuthProvider>
