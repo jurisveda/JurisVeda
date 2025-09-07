@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/sonner"
 import { AuthProvider } from "@/lib/providers"
 // import { ThemeProvider } from "@/lib/providers"
+import Script from "next/script";
 import { ThemeProvider } from "next-themes";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -28,6 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="overflow-auto no-scrollbar" suppressHydrationWarning>
+      <Script id="adsense-script" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7600277164170449" crossOrigin="anonymous"/>
       <body className={cn(inter.className, "bg-prime")}>
         <ThemeProvider attribute="data-theme" defaultTheme="light" disableTransitionOnChange={true}>
           <AuthProvider>

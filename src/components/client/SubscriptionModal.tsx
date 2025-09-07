@@ -24,8 +24,8 @@ export default function SubscriptionModal() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if(!fullName || !email || !phoneNumber){
-      toast.warning("There are some missing fields.")
+    if(!fullName?.trim() || !email?.trim() || !phoneNumber?.trim()){
+      toast.warning("Please fill in all required fields.")
       return
     }
     setIsSubmitting(true)
