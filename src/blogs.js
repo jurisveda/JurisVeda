@@ -1,3 +1,4 @@
+"use client";
 /*
   FILE: blogs.js  (Blogs page)
 
