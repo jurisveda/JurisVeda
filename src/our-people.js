@@ -1,3 +1,4 @@
+"use client";
 /*
   FILE: our-people.js  (Our People page)
 
