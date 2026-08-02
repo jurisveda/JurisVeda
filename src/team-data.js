@@ -17,7 +17,7 @@
 */
 
 export const founder = {
-  name: "Anuraj Sharma",
+  name: "Anuraj Tiwari",
   role: "Founder & Editor-in-Chief",
   bio: "Anuraj founded Juris Veda in 2025 while in his final year of law school, after realising how scattered and inconsistent good subject notes and case-law summaries were for Indian law students. Juris Veda is his attempt to build the resource he wished he'd had on day one — clear, exam-ready, and written by students who've actually sat the exams.",
   photo: "/images/team/founder.jpg",
